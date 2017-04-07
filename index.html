@@ -38,5 +38,15 @@
 			Javascript is required for the conversion
 		</noscript>
 		<script>!function(a,b,c,d){"use strict";function i(a){return document.getElementById(a)}function j(){return i(a)}function k(){return i(d)}function l(){return i(b)}function m(){return i(c)}function n(a,b){for(;a.length<b;)a="0"+a;return a}function o(a,b){return n(a.toString(16).toUpperCase(),b)}function p(a,b){i(a).onchange=b}function q(){var a=parseInt(m().value,16);if(a>65535)return s();var b=Math.floor((a>>f&31)*e/31+.5),c=Math.floor((a>>g&63)*e/63+.5),d=Math.floor((31&a)*e/31+.5),i=o(b<<16|c<<8|d,0);l().value!=h+i&&(l().value=h+i,j().value="#"+i,k().style.backgroundColor="#"+i)}function r(){var a=h+j().value.substr(1).toUpperCase();l().value!=a&&(l().value=a,s())}function s(){var a=parseInt(l().value,16);if(a>16777215)return r();var b="#"+a.toString(16);j().value!=b&&(j().value=b,k().style.backgroundColor=b);var c=a>>16&e,d=a>>8&e,i=a&e,b=c>>3<<f|d>>2<<g|i>>3;b=h+o(b,4),m().value!=b&&(m().value=b)}var e=255,f=11,g=5,h="0x";s(),"text"!=j().type&&(j().style.display="inherit",k().style.display="none",p(a,r)),p(b,s),p(c,q),i("main").style.display="block"}("colorInput","in888","in565","colorOutput");</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-97024221-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 	</body>
 </html>

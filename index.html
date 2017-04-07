@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>RGB565 to RGB888 Conversion utility</title>
+<meta name="description" content="Utility to convert RGB565 to RGB888 and vice-versa"/>
+<meta name="keywords" content="RGB565 RGB888 color converter"/>
+<meta name="robots" content="index,nofollow"/>
+<meta http-equiv="content-language" content="en" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+label{display: block;font-size: 65%;font-weight: bold;}
+h1{font-size: 120%}
+#colorInput{width: 1em;height: 1.5em}
+.block{display: inline-block;}
+#main{display: none}
+</style>
+</head>
+<body>
+<h1>RGB565 to RGB888 Conversion</h1>
+<div id="main">
+<div id="a" class="block">
+<label for="colorInput">RGB656</label>
+<input type="text" id="in565" maxlength="6" minlength="4" size="8" placeholder="color input" value="0xABCD">
+</div>
+<div id="b" class="block">
+<button>Convert</button>
+</div>
+<div id="b" class="block">
+<label for="colorInput">RGB888</label>
+<input type="color" id="colorInput" value="#60e8a0"/>
+<input type="text" id="in888" maxlength="8" minlength="6" size="8" placeholder="color input" value="0x60e8a0">
+</div>
+</div>
+<noscript>Javascript is required for the conversion</noscript>
+<script>!function(a,b,c){"use strict";function d(a){return document.getElementById(a)}function g(){return d(c)}function h(a,b){return a.toString(16).toUpperCase().padStart(b,0)}function i(a,b){d(a).onchange=b}function j(){var c=parseInt(g().value,16);if(c>65535)return l();var e=Math.floor(255*(c>>11&31)/31+.5),f=Math.floor(255*(c>>5&63)/63+.5),i=Math.floor(255*(31&c)/31+.5),j=h(e<<16|f<<8|i,0);d(b).value!="0x"+j&&(d(b).value="0x"+j,d(a).value="#"+j)}function k(){var c="0x"+d(a).value.substr(1).toUpperCase();d(b).value!=c&&(d(b).value=c,l())}function l(){var c=parseInt(d(b).value,16);if(c>16777215)return k();var e="#"+c.toString(16);d(a).value!=e&&(d(a).value=e);var f=c>>16&255,i=c>>8&255,j=255&c,e=f>>3<<11|i>>2<<5|j>>3;e="0x"+h(e,4),g().value!=e&&(g().value=e)}l(),i(a,k),i(b,l),i("in565",j),d("main").style.display="block"}("colorInput","in888","in565");</script>
+</body>
+</html>
